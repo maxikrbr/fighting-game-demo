@@ -1,6 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#container-stats {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+#timer {
+    height: 60px;
+    width: 60px;
+    background-color: brown;
+    z-index: 1;
+}
+
+.container-health {
+    width: 300px;
+}
+
+.health-bar {
+    height: 30px;
+    width: 300px;
+    background-color: yellow;
+}
+
+#player-container-health {
+    display: flex;
+    justify-content: end;
 }
