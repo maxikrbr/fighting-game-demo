@@ -29,6 +29,9 @@ body {
     width: 60px;
     background-color: brown;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-health {
@@ -44,4 +47,13 @@ body {
 #player-container-health {
     display: flex;
     justify-content: end;
+}
+
+#result {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
 }

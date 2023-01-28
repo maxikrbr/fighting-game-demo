@@ -113,6 +113,7 @@ const keys = {
         pressed: false
     }
 }
+
 function rectCollision({ rect1, rect2 }){
     return (
         rect1.position.x + rect1.attackBox.width + rect1.attackBox.offset.x >= rect2.position.x &&
@@ -121,6 +122,34 @@ function rectCollision({ rect1, rect2 }){
         rect1.position.y <= rect2.position.y + rect2.height 
         )
 }
+
+let timer = 61
+resultDiv = document.querySelector('#result')
+function decreaseTimer(){
+    if (timer > 0){
+        setTimeout(decreaseTimer, 1000)
+        timer--
+        document.querySelector('#clock').textContent = timer
+    }
+
+    if (timer === 0){
+        if (player.health === enemy.health){
+            resultDiv.textContent = 'Tie!'
+            resultDiv.style.display = 'flex'
+        }
+    
+        else if (player.health > enemy.health){
+            resultDiv.textContent = 'PLayer 1 Wins!'
+            resultDiv.style.display = 'flex'
+        }
+    
+        else {
+            resultDiv.textContent = 'PLayer 2 Wins!'
+            resultDiv.style.display = 'flex'
+        }
+    }
+}
+decreaseTimer()
 
 function animate(){
     window.requestAnimationFrame(animate)
